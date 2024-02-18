@@ -1,0 +1,22 @@
+<% layout('/boilerplate/boilerplate.ejs') -%>
+
+<div class="container flex flex-wrap justify-center gap-6 p-8">
+        <% products.map(product =>{ %>
+                <div class="border-2 border-black">
+                        <div>
+                                <img src="<%= product.img %>" width="300px">
+                        </div>
+                        <div class="p-4">
+                                <div class="text-gray-400 text-xs py-2">
+                                        <%= product.category %>
+                                </div>
+                                <div>
+                                        <%= product.title %>
+                                </div>
+                                <div>
+                                        ₹ <%= product.price %>
+                                </div>
+                        </div>
+                </div>
+        <% }) %>
+</div>

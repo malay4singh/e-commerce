@@ -1,0 +1,18 @@
+<% layout('/boilerplate/boilerplate.ejs') -%>
+
+<div>
+        <form class="flex flex-col mt-7" action="/e-commerce/products/<%= product._id %>?_method=PUT" method="post">
+                <label for="">Title: </label>
+                <input class="border-2 border-gray mb-7" type="text" name="title" placeholder="Enter Title..." value="<%= product.title %>">
+                <label for="">Price: </label> 
+                <input class="border-2 border-gray mb-7" type="text" name="price" placeholder="Enter Price..." value="<%= product.price %>">
+                <label for="">Description: </label>
+                <textarea class="border-2 border-gray mb-9" name="desc" cols="30" rows="7"><%= product.desc %></textarea>
+                <label for="">Image: </label>
+                <input class="border-2 border-gray mb-7" type="text" name="img" placeholder="Enter Image Link..." value="<%= product.img %>">
+                <div class="flex">
+                        <button class="px-2 py-1 bg-blue-600 text-white rounded hover:cursor-pointer hover:bg-blue-800">Save</button>
+                </div>
+                
+        </form>
+</div>

@@ -1,0 +1,31 @@
+<% layout('/boilerplate/boilerplate.ejs') -%>
+
+<div class="flex mt-[7rem] justify-around">
+        <div>
+                <img class="w-[600px] h-[400px] object-cover" src="<%= product.img %>">
+        </div>
+        <div class="flex flex-col gap-[1.5rem]">
+                <div class="text-gray-400">
+                        <%= product.category %>
+                </div>
+                <div class="text-3xl">
+                        <%= product.title %>
+                </div>
+                <div class="">
+                        <%= product.desc %>
+                </div>
+                <div class="text-2xl mt-[5rem]">
+                        ₹ <%= product.price %>
+                </div>
+                <div class="flex gap-3">
+                        <a href="/e-commerce/products/<%= product._id %>/edit">
+                                <div class="px-2 py-1 bg-blue-600 text-white rounded hover:cursor-pointer hover:bg-blue-800">
+                                        Edit
+                                </div>
+                        </a>
+                        <form action="/e-commerce/products/<%= product._id %>?_method=DELETE" method="post">
+                                <button class="px-2 py-1 bg-red-500 text-white rounded hover:cursor-pointer hover:bg-red-700">Delete</button>
+                        </form>
+                </div>
+        </div>
+</div>

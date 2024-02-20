@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-connectDB(`mongodb+srv://malay4singh:DLmtMbBjtXbk0SKw@e-commerce.zdizx0e.mongodb.net/?retryWrites=true&w=majority`);
+connectDB(`mongodb+srv://malay4singh:DLmtMbBjtXbk0SKw@e-commerce.zdizx0e.mongodb.net/?retryWrites=true&w=cmajority`);
 
 const ecommerce = express.Router();
 
@@ -20,6 +20,10 @@ module.exports = ecommerce;
 
 // -----------------------------------functions
 async function connectDB(url){
-        await mongoose.connect(url);
+        await mongoose.connect(url, {
+                writeConcern: {
+                        w: 'majority'
+                }
+        });
         console.log("DB Connected");
 }
